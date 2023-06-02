@@ -16,7 +16,7 @@ const Conversation = () => {
           overflow: "scroll",
         }}
       >
-        <Message />
+        <Message menu={true} />
       </Box>
       <Footer />
     </Stack>
