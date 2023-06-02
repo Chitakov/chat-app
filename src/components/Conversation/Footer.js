@@ -4,8 +4,19 @@ import {
   Stack,
   InputAdornment,
   TextField,
+  Tooltip,
+  Fab,
 } from "@mui/material";
-import { LinkSimple, PaperPlaneTilt, Smiley } from "phosphor-react";
+import {
+  Camera,
+  File,
+  Image,
+  LinkSimple,
+  PaperPlaneTilt,
+  Smiley,
+  Sticker,
+  User,
+} from "phosphor-react";
 import { useTheme, styled } from "@mui/material/styles";
 import React from "react";
 
@@ -19,7 +30,41 @@ const StyledInput = styled(TextField)(({ theme }) => ({
   },
 }));
 
+const Actions = [
+  {
+    color: "#4da5fe",
+    icon: <Image size={24} />,
+    y: 102,
+    title: "Photo/Video",
+  },
+  {
+    color: "#1b8cfe",
+    icon: <Sticker size={24} />,
+    y: 172,
+    title: "Stickers",
+  },
+  {
+    color: "#0172e4",
+    icon: <Camera size={24} />,
+    y: 242,
+    title: "Image",
+  },
+  {
+    color: "#0159b2",
+    icon: <File size={24} />,
+    y: 312,
+    title: "Document",
+  },
+  {
+    color: "#013f7f",
+    icon: <User size={24} />,
+    y: 382,
+    title: "Contact",
+  },
+];
+
 const ChatInput = ({ setOpenPicker }) => {
+  const [openActions, setOpenActions] = React.useState(false);
   return (
     <StyledInput
       fullWidth
@@ -28,11 +73,37 @@ const ChatInput = ({ setOpenPicker }) => {
       InputProps={{
         disableUnderline: true,
         startAdornment: (
-          <InputAdornment>
-            <IconButton>
-              <LinkSimple />
-            </IconButton>
-          </InputAdornment>
+          <Stack sx={{ width: "max-content" }}>
+            <Stack
+              sx={{
+                position: "relative",
+                display: openActions ? "inline-block" : "none",
+              }}
+            >
+              {Actions.map((el) => (
+                <Tooltip placement="right" title={el.title}>
+                  <Fab
+                    sx={{
+                      position: "absolute",
+                      top: -el.y,
+                      backgroundColor: el.color,
+                    }}
+                  >
+                    {el.icon}
+                  </Fab>
+                </Tooltip>
+              ))}
+            </Stack>
+            <InputAdornment>
+              <IconButton
+                onClick={() => {
+                  setOpenActions((prev) => !prev);
+                }}
+              >
+                <LinkSimple />
+              </IconButton>
+            </InputAdornment>
+          </Stack>
         ),
         endAdornment: (
           <InputAdornment>
