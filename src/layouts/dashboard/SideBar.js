@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { Gear } from "phosphor-react";
 import { faker } from "@faker-js/faker";
-import Logo from "../../assets/Images/logo.ico";
+import Logo from "../../assets/Images/logo.png";
 import { Nav_Buttons, Profile_Menu } from "../../data";
 import useSettings from "../../hooks/useSettings";
 import AntSwitch from "../../components/AntSwitch";

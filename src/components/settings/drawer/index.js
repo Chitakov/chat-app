@@ -120,7 +120,7 @@ export default function SettingsDrawer() {
                 sx={{ py: 2, pr: 1, pl: 2.5 }}
               >
                 <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>
-                  Settings
+                  Настройки
                 </Typography>
 
                 <IconButton onClick={onResetSetting}>
@@ -137,12 +137,12 @@ export default function SettingsDrawer() {
               <Scrollbar sx={{ flexGrow: 1 }}>
                 <Stack spacing={3} sx={{ p: 3 }}>
                   <Stack spacing={1.5}>
-                    <Typography variant="subtitle2">Direction</Typography>
+                    <Typography variant="subtitle2">Направление</Typography>
                     <SettingDirection />
                   </Stack>
 
                   <Stack spacing={1.5}>
-                    <Typography variant="subtitle2">Presets</Typography>
+                    <Typography variant="subtitle2">Цвета</Typography>
                     <SettingColorPresets />
                   </Stack>
 
