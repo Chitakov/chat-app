@@ -19,7 +19,7 @@ const Profile_Menu = [
     icon: <Gear />,
   },
   {
-    title: "Logout",
+    title: "Sign Out",
     icon: <SignOut />,
   },
 ];
@@ -286,6 +286,158 @@ const Shared_docs = [
   },
 ];
 
+const MembersList = [
+  {
+    id: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+  },
+  {
+    id: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+  },
+  {
+    id: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 5,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+  },
+  {
+    id: 6,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+];
+
+const CallList = [
+  {
+    id: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: false,
+    missed: true,
+  },
+  {
+    id: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: true,
+    missed: true,
+  },
+  {
+    id: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 5,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 6,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 7,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 8,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 9,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 10,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+  {
+    id: 11,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+    incoming: false,
+    missed: false,
+  },
+  {
+    id: 12,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+    incoming: true,
+    missed: false,
+  },
+];
+
 export {
   Profile_Menu,
   Nav_Setting,
@@ -295,4 +447,6 @@ export {
   Message_options,
   Shared_links,
   Shared_docs,
+  CallList,
+  MembersList,
 };
