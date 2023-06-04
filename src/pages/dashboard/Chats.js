@@ -148,7 +148,7 @@ const Chats = () => {
           </Stack>
           <Divider />
         </Stack>
-        <Stack sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
+        <Stack sx={{ flexGrow: 1, overflowY: "scroll", height: "100%" }}>
           <SimpleBarStyle timeout={500} clickOnTrack={false}>
             <Stack spacing={2.4}>
               <Typography variant="subtitle2" sx={{ color: "#676667" }}>
