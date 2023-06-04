@@ -35,31 +35,31 @@ const Actions = [
     color: "#4da5fe",
     icon: <Image size={24} />,
     y: 102,
-    title: "Photo/Video",
+    title: "Фото/Видео",
   },
   {
     color: "#1b8cfe",
     icon: <Sticker size={24} />,
     y: 172,
-    title: "Stickers",
+    title: "Стикер",
   },
   {
     color: "#0172e4",
     icon: <Camera size={24} />,
     y: 242,
-    title: "Image",
+    title: "Изображение",
   },
   {
     color: "#0159b2",
     icon: <File size={24} />,
     y: 312,
-    title: "Document",
+    title: "Документ",
   },
   {
     color: "#013f7f",
     icon: <User size={24} />,
     y: 382,
-    title: "Contact",
+    title: "Контакт",
   },
 ];
 
@@ -68,7 +68,7 @@ const ChatInput = ({ setOpenPicker }) => {
   return (
     <StyledInput
       fullWidth
-      placeholder="Write a message..."
+      placeholder="Напишите сообщение..."
       variant="filled"
       InputProps={{
         disableUnderline: true,

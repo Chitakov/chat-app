@@ -11,8 +11,8 @@ import { Button } from "@mui/material";
 const ResetPasswordForm = () => {
   const ResetPasswordSchema = Yup.object().shape({
     email: Yup.string()
-      .required("Email is required")
-      .email("Email must be a valid email address"),
+      .required("Необходимо ввести эллектронную почту")
+      .email("Некорректная электронная почта"),
   });
 
   const methods = useForm({
@@ -42,7 +42,7 @@ const ResetPasswordForm = () => {
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-      <RHFTextField name="email" label="Email address" />
+      <RHFTextField name="email" label="Электронная почта" />
 
       <Button
         fullWidth
@@ -61,7 +61,7 @@ const ResetPasswordForm = () => {
           },
         }}
       >
-        Send Request
+        Отправить Запрос
       </Button>
     </FormProvider>
   );

@@ -21,12 +21,12 @@ const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
-    firstName: Yup.string().required("First name required"),
-    lastName: Yup.string().required("Last name required"),
+    firstName: Yup.string().required("Необходимо ввести Имя"),
+    lastName: Yup.string().required("Необходимо ввести Фамилию"),
     email: Yup.string()
-      .required("Email is required")
-      .email("Email must be a valid email address"),
-    password: Yup.string().required("Password is required"),
+      .required("Необходимо ввести электронную почту")
+      .email("Некорректная электронная почта"),
+    password: Yup.string().required("Необходимо ввести пароль"),
   });
 
   const defaultValues = {
@@ -69,15 +69,15 @@ const RegisterForm = () => {
         )}
 
         <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-          <RHFTextField name="firstName" label="First name" />
-          <RHFTextField name="lastName" label="Last name" />
+          <RHFTextField name="firstName" label="Имя" />
+          <RHFTextField name="lastName" label="Фамилия" />
         </Stack>
 
-        <RHFTextField name="email" label="Email address" />
+        <RHFTextField name="email" label="Электронная почта" />
 
         <RHFTextField
           name="password"
-          label="Password"
+          label="Пароль"
           type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
@@ -112,7 +112,7 @@ const RegisterForm = () => {
           },
         }}
       >
-        Create Account
+        Создать Аккаунт
       </Button>
     </FormProvider>
   );

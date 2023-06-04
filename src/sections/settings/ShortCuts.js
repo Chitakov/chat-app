@@ -18,87 +18,87 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const list = [
   {
     key: 0,
-    title: "Mark as unread",
+    title: "Пометить как непрочитанное",
     combination: ["Cmd", "Shift", "U"],
   },
   {
     key: 1,
-    title: "Mute",
+    title: "Отключить звук",
     combination: ["Cmd", "Shift", "M"],
   },
   {
     key: 2,
-    title: "Archive Chat",
+    title: "Архив",
     combination: ["Cmd", "Shift", "E"],
   },
   {
     key: 3,
-    title: "Delete Chat",
+    title: "Удалить чат",
     combination: ["Cmd", "Shift", "D"],
   },
   {
     key: 4,
-    title: "Pin Chat",
+    title: "Закрепить чат",
     combination: ["Cmd", "Shift", "P"],
   },
   {
     key: 5,
-    title: "Search",
+    title: "Поиск",
     combination: ["Cmd", "F"],
   },
   {
     key: 6,
-    title: "Search Chat",
+    title: "Искать чат",
     combination: ["Cmd", "Shift", "F"],
   },
   {
     key: 7,
-    title: "Next Chat",
+    title: "Следующий чат",
     combination: ["Cmd", "N"],
   },
   {
     key: 8,
-    title: "Next Step",
+    title: "Следующий шаг",
     combination: ["Ctrl", "Tab"],
   },
   {
     key: 9,
-    title: "Previous Step",
+    title: "Предыдущий шаг",
     combination: ["Ctrl", "Shift", "Tab"],
   },
   {
     key: 10,
-    title: "New Group",
+    title: "Новая группа",
     combination: ["Cmd", "Shift", "N"],
   },
   {
     key: 11,
-    title: "Profile & About",
+    title: "Профиль & О себе",
     combination: ["Cmd", "P"],
   },
   {
     key: 12,
-    title: "Increase speed of voice message",
+    title: "Увеличить скорость голосового сообщения",
     combination: ["Shift", "."],
   },
   {
     key: 13,
-    title: "Decrease speed of voice message",
+    title: "Понизить скорость голосового сообщения",
     combination: ["Shift", ","],
   },
   {
     key: 14,
-    title: "Settings",
+    title: "Настройки",
     combination: ["Shift", "S"],
   },
   {
     key: 15,
-    title: "Emoji Panel",
+    title: "Панель эмодзи",
     combination: ["Cmd", "E"],
   },
   {
     key: 16,
-    title: "Sticker Panel",
+    title: "Панель стикеров",
     combination: ["Cmd", "S"],
   },
 ];
@@ -116,7 +116,7 @@ const Shortcuts = ({ open, handleClose }) => {
         aria-describedby="alert-dialog-slide-description"
         sx={{ p: 4 }}
       >
-        <DialogTitle>{"Keyboard Shortcuts"}</DialogTitle>
+        <DialogTitle>{"Горячие клавиши"}</DialogTitle>
         <DialogContent sx={{ mt: 4 }}>
           {/*  */}
           <Grid container spacing={3}>
@@ -155,7 +155,7 @@ const Shortcuts = ({ open, handleClose }) => {
         </DialogContent>
         <DialogActions>
           <Button variant={"contained"} onClick={handleClose}>
-            Ok
+            Ок
           </Button>
         </DialogActions>
       </Dialog>

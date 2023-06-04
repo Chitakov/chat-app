@@ -31,14 +31,14 @@ const StartCall = ({ open, handleClose }) => {
       aria-describedby="alert-dialog-slide-description"
       sx={{ p: 4 }}
     >
-      <DialogTitle>{"Start New Conversation"}</DialogTitle>
+      <DialogTitle>{"Начать новый разговор"}</DialogTitle>
       <Stack p={2} sx={{ width: "100%" }}>
         <Search>
           <SearchIconWrapper>
             <MagnifyingGlass color="#709CE6" />
           </SearchIconWrapper>
           <StyledInputBase
-            placeholder="Search…"
+            placeholder="Поиск…"
             inputProps={{ "aria-label": "search" }}
           />
         </Search>

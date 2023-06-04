@@ -37,7 +37,7 @@ const StarredMessages = () => {
             >
               <ArrowLeft />
             </IconButton>
-            <Typography variant="subtitle2">Starred Messages</Typography>
+            <Typography variant="subtitle2">Помеченные сообщения</Typography>
           </Stack>
         </Box>
         <Stack

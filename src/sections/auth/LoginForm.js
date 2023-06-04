@@ -24,9 +24,9 @@ const LoginForm = () => {
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
-      .required("Email is required")
-      .email("Email must be a valid email address"),
-    password: Yup.string().required("Password is required"),
+      .required("Необходимо ввести электронную почту")
+      .email("Некорректная электронная почта"),
+    password: Yup.string().required("Необходимо ввести пароль"),
   });
 
   const defaultValues = {
@@ -66,11 +66,11 @@ const LoginForm = () => {
           <Alert severity="error">{errors.afterSubmit.message}</Alert>
         )}
 
-        <RHFTextField name="email" label="Email address" />
+        <RHFTextField name="email" label="Электронная почта" />
 
         <RHFTextField
           name="password"
-          label="Password"
+          label="Пароль"
           type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
@@ -95,7 +95,7 @@ const LoginForm = () => {
           color="inherit"
           underline="always"
         >
-          Forgot password?
+          Забыли пароль?
         </Link>
       </Stack>
 
@@ -117,7 +117,7 @@ const LoginForm = () => {
           },
         }}
       >
-        Login
+        Войти
       </Button>
     </FormProvider>
   );

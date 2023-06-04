@@ -23,7 +23,7 @@ export default function AuthSocial() {
           },
         }}
       >
-        OR
+        ИЛИ
       </Divider>
 
       <Stack direction="row" justifyContent="center" spacing={2}>

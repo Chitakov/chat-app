@@ -125,7 +125,7 @@ const Chats = () => {
           justifyContent="space-between"
           direction="row"
         >
-          <Typography variant="h5">Chats</Typography>
+          <Typography variant="h5">Чаты</Typography>
           <IconButton sx={{ width: "max-content" }}>
             <CircleDashed />
           </IconButton>
@@ -136,7 +136,7 @@ const Chats = () => {
               <MagnifyingGlass color="#709CE6" />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Поиск…"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
@@ -144,7 +144,7 @@ const Chats = () => {
         <Stack spacing={1}>
           <Stack direction={"row"} spacing={1.5} alignItems="center">
             <ArchiveBox size={24} />
-            <Button variant="text">Archive</Button>
+            <Button variant="text">Архив</Button>
           </Stack>
           <Divider />
         </Stack>
@@ -152,14 +152,14 @@ const Chats = () => {
           <SimpleBarStyle timeout={500} clickOnTrack={false}>
             <Stack spacing={2.4}>
               <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                Pinned
+                Закреплённые
               </Typography>
               {/* Chat List */}
               {ChatList.filter((el) => el.pinned).map((el) => {
                 return <ChatElement {...el} />;
               })}
               <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                All Chats
+                Все чаты
               </Typography>
               {/* Chat List */}
               {ChatList.filter((el) => !el.pinned).map((el) => {

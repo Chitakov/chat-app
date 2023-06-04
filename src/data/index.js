@@ -11,15 +11,15 @@ import {
 
 const Profile_Menu = [
   {
-    title: "Profile",
+    title: "Профиль",
     icon: <User />,
   },
   {
-    title: "Settings",
+    title: "Настройки",
     icon: <Gear />,
   },
   {
-    title: "Sign Out",
+    title: "Выйти",
     icon: <SignOut />,
   },
 ];
@@ -132,29 +132,29 @@ const ChatList = [
 const Chat_History = [
   {
     type: "msg",
-    message: "Hi 👋🏻, How are ya ?",
+    message: "Привет 👋🏻, Как ты ?",
     incoming: true,
     outgoing: false,
   },
   {
     type: "divider",
-    text: "Today",
+    text: "Сегодня",
   },
   {
     type: "msg",
-    message: "Hi 👋 Panda, not bad, u ?",
+    message: "Привет 👋 Дима, неплохо, а ты ?",
     incoming: false,
     outgoing: true,
   },
   {
     type: "msg",
-    message: "Can you send me an abstarct image?",
+    message: "Можешь отослать мне абстактное изображение?",
     incoming: false,
     outgoing: true,
   },
   {
     type: "msg",
-    message: "Ya sure, sending you a pic",
+    message: "Да, конечно, отсылаю",
     incoming: true,
     outgoing: false,
   },
@@ -162,22 +162,21 @@ const Chat_History = [
   {
     type: "msg",
     subtype: "img",
-    message: "Here You Go",
+    message: "Вот",
     img: faker.image.abstract(),
     incoming: true,
     outgoing: false,
   },
   {
     type: "msg",
-    message: "Can you please send this in file format?",
+    message: "Можешь, пожалуйста, отослать этот файл в другом формате?",
     incoming: false,
     outgoing: true,
   },
-
   {
     type: "msg",
     subtype: "doc",
-    message: "Yes sure, here you go.",
+    message: "Да, конечно.",
     incoming: true,
     outgoing: false,
   },
@@ -185,15 +184,15 @@ const Chat_History = [
     type: "msg",
     subtype: "link",
     preview: faker.image.cats(),
-    message: "Yep, I can also do that",
+    message: "Котики ;)",
     incoming: true,
     outgoing: false,
   },
   {
     type: "msg",
     subtype: "reply",
-    reply: "This is a reply",
-    message: "Yep, I can also do that",
+    reply: "Это пересланное сообщение",
+    message: "Котики ;)",
     incoming: false,
     outgoing: true,
   },
@@ -201,22 +200,22 @@ const Chat_History = [
 
 const Message_options = [
   {
-    title: "Reply",
+    title: "Ответить",
   },
   {
-    title: "React to message",
+    title: "Отреагировать на сообщение",
   },
   {
-    title: "Forward message",
+    title: "Переслать сообщение",
   },
   {
-    title: "Star message",
+    title: "Отметить сообщение",
   },
   {
-    title: "Report",
+    title: "Репорт",
   },
   {
-    title: "Delete Message",
+    title: "Удалить сообщение",
   },
 ];
 
@@ -225,7 +224,7 @@ const Shared_links = [
     type: "msg",
     subtype: "link",
     preview: faker.image.cats(),
-    message: "Yep, I can also do that",
+    message: "Котики ;)",
     incoming: true,
     outgoing: false,
   },
@@ -233,7 +232,7 @@ const Shared_links = [
     type: "msg",
     subtype: "link",
     preview: faker.image.cats(),
-    message: "Yep, I can also do that",
+    message: "Котики ;)",
     incoming: true,
     outgoing: false,
   },
@@ -241,7 +240,7 @@ const Shared_links = [
     type: "msg",
     subtype: "link",
     preview: faker.image.cats(),
-    message: "Yep, I can also do that",
+    message: "Котики ;)",
     incoming: true,
     outgoing: false,
   },
@@ -249,7 +248,7 @@ const Shared_links = [
     type: "msg",
     subtype: "link",
     preview: faker.image.cats(),
-    message: "Yep, I can also do that",
+    message: "Котики ;)",
     incoming: true,
     outgoing: false,
   },
@@ -259,28 +258,35 @@ const Shared_docs = [
   {
     type: "msg",
     subtype: "doc",
-    message: "Yes sure, here you go.",
+    message: "Да, конечно.",
     incoming: true,
     outgoing: false,
   },
   {
     type: "msg",
     subtype: "doc",
-    message: "Yes sure, here you go.",
+    message: "Да, конечно.",
     incoming: true,
     outgoing: false,
   },
   {
     type: "msg",
     subtype: "doc",
-    message: "Yes sure, here you go.",
+    message: "Да, конечно.",
     incoming: true,
     outgoing: false,
   },
   {
     type: "msg",
     subtype: "doc",
-    message: "Yes sure, here you go.",
+    message: "Да, конечно.",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    subtype: "doc",
+    message: "Да, конечно.",
     incoming: true,
     outgoing: false,
   },

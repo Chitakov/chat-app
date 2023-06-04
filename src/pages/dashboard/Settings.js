@@ -51,49 +51,49 @@ const Settings = () => {
     {
       key: 0,
       icon: <Bell size={20} />,
-      title: "Notifications",
+      title: "Уведомления",
       onclick: () => {},
     },
     {
       key: 1,
       icon: <Lock size={20} />,
-      title: "Privacy",
+      title: "Конфиденциальность",
       onclick: () => {},
     },
     {
       key: 2,
       icon: <Key size={20} />,
-      title: "Security",
+      title: "Безопасность",
       onclick: () => {},
     },
     {
       key: 3,
       icon: <PencilCircle size={20} />,
-      title: "Theme",
+      title: "Тема",
       onclick: handleOpenTheme,
     },
     {
       key: 4,
       icon: <Image size={20} />,
-      title: "Chat Wallpaper",
+      title: "Обои чата",
       onclick: () => {},
     },
     {
       key: 5,
       icon: <Note size={20} />,
-      title: "Request Account Info",
+      title: "Запрос информации об аккаунте",
       onclick: () => {},
     },
     {
       key: 6,
       icon: <Keyboard size={20} />,
-      title: "Keyboard Shortcuts",
+      title: "Горячие клавиши",
       onclick: handleOpenShortcuts,
     },
     {
       key: 7,
       icon: <Info size={20} />,
-      title: "Help",
+      title: "Помощь",
       onclick: () => {},
     },
   ];
@@ -123,7 +123,7 @@ const Settings = () => {
                 <CaretLeft size={24} color={"#4B4B4B"} />
               </IconButton>
 
-              <Typography variant="h6">Settings</Typography>
+              <Typography variant="h6">Настройки</Typography>
             </Stack>
 
             {/* Profile */}

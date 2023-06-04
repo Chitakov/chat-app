@@ -53,14 +53,14 @@ const Media = () => {
             >
               <ArrowLeft />
             </IconButton>
-            <Typography variant="subtitle2">Shared</Typography>
+            <Typography variant="subtitle2">Отпраленные</Typography>
           </Stack>
         </Box>
 
         <Tabs value={value} onChange={handleChange} centered>
-          <Tab label="Media" />
-          <Tab label="Links" />
-          <Tab label="Docs" />
+          <Tab label="Медиа" />
+          <Tab label="Ссылки" />
+          <Tab label="Документы" />
         </Tabs>
         <Stack
           sx={{

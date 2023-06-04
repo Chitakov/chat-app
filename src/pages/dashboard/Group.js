@@ -54,7 +54,7 @@ const Group = () => {
               justifyContent="space-between"
               direction="row"
             >
-              <Typography variant="h5">Groups</Typography>
+              <Typography variant="h5">Группы</Typography>
             </Stack>
             <Stack sx={{ width: "100%" }}>
               <Search>
@@ -62,7 +62,7 @@ const Group = () => {
                   <MagnifyingGlass color="#709CE6" />
                 </SearchIconWrapper>
                 <StyledInputBase
-                  placeholder="Search…"
+                  placeholder="Поиск…"
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
@@ -73,7 +73,7 @@ const Group = () => {
               direction={"row"}
             >
               <Typography variant="subtitle2" sx={{}} component={Link}>
-                Create New Group
+                Создать новую группу
               </Typography>
               <IconButton onClick={handleOpenDialog}>
                 <Plus style={{ color: theme.palette.primary.main }} />
@@ -84,14 +84,14 @@ const Group = () => {
               <SimpleBarStyle timeout={500} clickOnTrack={false}>
                 <Stack spacing={2.4}>
                   <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                    Pinned
+                    Закреплённые
                   </Typography>
                   {/* Chat List */}
                   {ChatList.filter((el) => el.pinned).map((el, idx) => {
                     return <ChatElement {...el} />;
                   })}
                   <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                    All Chats
+                    Все чаты
                   </Typography>
                   {/* Chat List */}
                   {ChatList.filter((el) => !el.pinned).map((el, idx) => {

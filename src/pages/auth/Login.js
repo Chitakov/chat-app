@@ -11,17 +11,17 @@ const Login = () => {
   return (
     <>
       <Stack spacing={2} sx={{ mb: 5, position: "relative" }}>
-        <Typography variant="h4">Login to Tawk</Typography>
+        <Typography variant="h4">Войти в Мессенджер</Typography>
 
         <Stack direction="row" spacing={0.5}>
-          <Typography variant="body2">New user?</Typography>
+          <Typography variant="body2">Новый пользователь?</Typography>
 
           <Link
             to={"/auth/register"}
             component={RouterLink}
             variant="subtitle2"
           >
-            Create an account
+            Создать аккаунт
           </Link>
         </Stack>
 

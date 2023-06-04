@@ -16,11 +16,11 @@ const NewPasswordForm = () => {
 
   const VerifyCodeSchema = Yup.object().shape({
     password: Yup.string()
-      .min(6, "Password must be at least 6 characters")
-      .required("Password is required"),
+      .min(6, "Пароль должен содержать не менее 6 символов")
+      .required("Необходимо ввести пароль"),
     confirmPassword: Yup.string()
-      .required("Confirm password is required")
-      .oneOf([Yup.ref("password"), null], "Passwords must match"),
+      .required("Необходимо подтверждение пароля")
+      .oneOf([Yup.ref("password"), null], "Пароли должны совпадать"),
   });
 
   const defaultValues = {
@@ -59,7 +59,7 @@ const NewPasswordForm = () => {
       <Stack spacing={3}>
         <RHFTextField
           name="password"
-          label="Password"
+          label="Пароль"
           type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
@@ -77,7 +77,7 @@ const NewPasswordForm = () => {
 
         <RHFTextField
           name="confirmPassword"
-          label="Confirm New Password"
+          label="Подтверждение нового пароля"
           type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
@@ -110,7 +110,7 @@ const NewPasswordForm = () => {
             },
           }}
         >
-          Update Password
+          Изменить Пароль
         </Button>
       </Stack>
     </FormProvider>

@@ -56,7 +56,7 @@ const Header = () => {
           </Box>
           <Stack spacing={0.2}>
             <Typography variant="subtitle2">{faker.name.fullName()}</Typography>
-            <Typography variant="caption">Online</Typography>
+            <Typography variant="caption">Онлайн</Typography>
           </Stack>
         </Stack>
         <Stack direction={"row"} alignItems="center" spacing={3}>

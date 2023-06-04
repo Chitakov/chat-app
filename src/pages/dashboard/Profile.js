@@ -29,7 +29,7 @@ const Profile = () => {
                 <CaretLeft size={24} color={"#4B4B4B"} />
               </IconButton>
 
-              <Typography variant="h5">Profile</Typography>
+              <Typography variant="h5">Профиль</Typography>
             </Stack>
 
             {/* Profile Edit Form */}

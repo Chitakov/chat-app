@@ -55,7 +55,7 @@ const Call = () => {
               justifyContent="space-between"
               direction="row"
             >
-              <Typography variant="h5">Call Log</Typography>
+              <Typography variant="h5">История звонков</Typography>
             </Stack>
 
             <Stack sx={{ width: "100%" }}>
@@ -64,7 +64,7 @@ const Call = () => {
                   <MagnifyingGlass color="#709CE6" />
                 </SearchIconWrapper>
                 <StyledInputBase
-                  placeholder="Search…"
+                  placeholder="Поиск…"
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
@@ -76,7 +76,7 @@ const Call = () => {
               direction={"row"}
             >
               <Typography variant="subtitle2" sx={{}} component={Link}>
-                Start a conversation
+                Начать разговор
               </Typography>
               <IconButton onClick={handleOpenDialog}>
                 <Phone style={{ color: theme.palette.primary.main }} />

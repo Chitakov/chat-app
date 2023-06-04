@@ -20,26 +20,19 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const TAGS_OPTION = [
-  "Toy Story 3",
-  "Logan",
-  "Full Metal Jacket",
-  "Dangal",
-  "The Sting",
-  "2001: A Space Odyssey",
-  "Singin' in the Rain",
-  "Toy Story",
-  "Bicycle Thieves",
-  "The Kid",
-  "Inglourious Basterds",
-  "Snatch",
-  "3 Idiots",
+  "Олег Быченко",
+  "Василий Пупкин",
+  "Евгений Петрушка",
+  "Любовь Фёдорова",
+  "Жанна Чеборац",
+  "Дмитрий Жнец",
 ];
 
 const CreateGroupForm = ({ handleClose }) => {
   const NewGroupSchema = Yup.object().shape({
-    title: Yup.string().required("Title is required"),
+    title: Yup.string().required("Необходимо ввести название"),
 
-    members: Yup.array().min(2, "Must have at least 2 members"),
+    members: Yup.array().min(2, "Необходимо более 2 участников"),
   });
 
   const defaultValues = {
@@ -73,10 +66,10 @@ const CreateGroupForm = ({ handleClose }) => {
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
-        <RHFTextField name="title" label="Title" />
+        <RHFTextField name="title" label="Название" />
         <RHFAutocomplete
           name="members"
-          label="Members"
+          label="Участники"
           multiple
           freeSolo
           options={TAGS_OPTION.map((option) => option)}
@@ -88,9 +81,9 @@ const CreateGroupForm = ({ handleClose }) => {
           alignItems="center"
           justifyContent={"end"}
         >
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Отмена</Button>
           <Button type="submit" variant="contained">
-            Create
+            Создать
           </Button>
         </Stack>
       </Stack>
@@ -110,7 +103,7 @@ const CreateGroup = ({ open, handleClose }) => {
       aria-describedby="alert-dialog-slide-description"
       sx={{ p: 4 }}
     >
-      <DialogTitle>{"Create New Group"}</DialogTitle>
+      <DialogTitle>{"Создать новую группу"}</DialogTitle>
 
       <DialogContent sx={{ mt: 4 }}>
         {/* Create Group Form */}

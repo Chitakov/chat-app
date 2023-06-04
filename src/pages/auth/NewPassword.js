@@ -9,11 +9,11 @@ const NewPassword = () => {
     <>
       <Stack spacing={2} sx={{ mb: 5, position: "relative" }}>
         <Typography variant="h3" paragraph>
-          Reset Password
+          Изменить Пароль
         </Typography>
 
         <Typography sx={{ color: "text.secondary", mb: 5 }}>
-          Please set your new password.
+          Пожалуйста, введите новый пароль.
         </Typography>
       </Stack>
 
@@ -34,7 +34,7 @@ const NewPassword = () => {
         }}
       >
         <CaretLeft size={24} />
-        Return to sign in
+        Вернуться на вход
       </Link>
     </>
   );

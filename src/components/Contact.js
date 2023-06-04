@@ -43,15 +43,15 @@ const BlockDialog = ({ open, handleClose }) => {
       onClose={handleClose}
       aria-describedby="alert-dialog-slide-description"
     >
-      <DialogTitle>Block this contact</DialogTitle>
+      <DialogTitle>Заблокировать этот контакт</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-slide-description">
-          Are you sure you want to block this Contact?
+          Вы уверены, что хотите заблокировать этот контакт?
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleClose}>Yes</Button>
+        <Button onClick={handleClose}>Отмена</Button>
+        <Button onClick={handleClose}>Да</Button>
       </DialogActions>
     </Dialog>
   );
@@ -66,15 +66,15 @@ const DeleteChatDialog = ({ open, handleClose }) => {
       onClose={handleClose}
       aria-describedby="alert-dialog-slide-description"
     >
-      <DialogTitle>Delete this chat</DialogTitle>
+      <DialogTitle>Удалить этот чат</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-slide-description">
-          Are you sure you want to delete this chat?
+          Вы уверены, что хотите удалить этот чат?
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleClose}>Yes</Button>
+        <Button onClick={handleClose}>Отмена</Button>
+        <Button onClick={handleClose}>Да</Button>
       </DialogActions>
     </Dialog>
   );
@@ -115,7 +115,7 @@ const Contact = () => {
             justifyContent="space-between"
             spacing={3}
           >
-            <Typography variant="subtitle2">Contact Info</Typography>
+            <Typography variant="subtitle2">Контактная информация</Typography>
             <IconButton
               onClick={() => {
                 dispatch(ToggleSidebar());
@@ -160,23 +160,23 @@ const Contact = () => {
                 <Phone />
               </IconButton>
 
-              <Typography variant="overline">Voice</Typography>
+              <Typography variant="overline">Аудио</Typography>
             </Stack>
             <Stack alignItems={"center"} spacing={1}>
               <IconButton>
                 <VideoCamera />
               </IconButton>
 
-              <Typography variant="overline">Video</Typography>
+              <Typography variant="overline">Видео</Typography>
             </Stack>
           </Stack>
           <Divider />
           <Stack spacing={0.5}>
             <Typography variant="article" fontWeight={600}>
-              About
+              О себе
             </Typography>
             <Typography variant="body2" fontWeight={500}>
-              {"Imagination is the only limit"}
+              {"Хороший сотрудник"}
             </Typography>
           </Stack>
           <Divider />
@@ -185,7 +185,9 @@ const Contact = () => {
             alignItems="center"
             justifyContent={"space-between"}
           >
-            <Typography variant="subtitle2">Media, Links & Docs</Typography>
+            <Typography variant="subtitle2">
+              Медиа, Ссылки & Документы
+            </Typography>
             <Button
               onClick={() => {
                 dispatch(UpdateSidebarType("SHARED"));
@@ -210,7 +212,7 @@ const Contact = () => {
           >
             <Stack direction="row" alignItems="center" spacing={2}>
               <Star size={21} />
-              <Typography variant="subtitle2">Starred Messages</Typography>
+              <Typography variant="subtitle2">Помеченные сообщения</Typography>
             </Stack>
 
             <IconButton
@@ -229,20 +231,18 @@ const Contact = () => {
           >
             <Stack direction="row" alignItems="center" spacing={2}>
               <Bell size={21} />
-              <Typography variant="subtitle2">Mute Notifications</Typography>
+              <Typography variant="subtitle2">Отключить уведомления</Typography>
             </Stack>
 
             <AntSwitch />
           </Stack>
           <Divider />
-          <Typography variant="body2">1 group in common</Typography>
+          <Typography variant="body2">1 общая группа</Typography>
           <Stack direction="row" alignItems={"center"} spacing={2}>
             <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
             <Stack spacing={0.5}>
-              <Typography variant="subtitle2">Camel’s Gang</Typography>
-              <Typography variant="caption">
-                Owl, Parrot, Rabbit , You
-              </Typography>
+              <Typography variant="subtitle2">ОАСУП</Typography>
+              <Typography variant="caption">1С, SAP</Typography>
             </Stack>
           </Stack>
           <Stack direction="row" alignItems={"center"} spacing={2}>
@@ -254,7 +254,7 @@ const Contact = () => {
               startIcon={<Prohibit />}
               variant="outlined"
             >
-              Block
+              Блокировка
             </Button>
             <Button
               onClick={() => {
@@ -264,7 +264,7 @@ const Contact = () => {
               startIcon={<Trash />}
               variant="outlined"
             >
-              Delete
+              Удалить
             </Button>
           </Stack>
         </Stack>
