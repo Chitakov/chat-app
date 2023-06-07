@@ -17,12 +17,12 @@ import { RHFTextField } from "../../components/hook-form";
 import { Eye, EyeSlash } from "phosphor-react";
 import { useDispatch } from "react-redux";
 // import { useSelector } from "react-redux";
-// import { RegisterUser } from "../../redux/slices/auth";
+import { RegisterUser } from "../../redux/slices/auth";
 
 // ----------------------------------------------------------------------
 
 const RegisterForm = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const { isLoading } = useSelector((state) => state.auth);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -57,7 +57,7 @@ const RegisterForm = () => {
   const onSubmit = async (data) => {
     try {
       // submit data to backend
-      // dispatch(RegisterUser(data));
+      dispatch(RegisterUser(data));
     } catch (error) {
       console.error(error);
       reset();
