@@ -12,12 +12,18 @@ import {
   Button,
 } from "@mui/material";
 // components
-import FormProvider, { RHFTextField } from "../../components/hook-form";
+import FormProvider from "../../components/hook-form";
+import { RHFTextField } from "../../components/hook-form";
 import { Eye, EyeSlash } from "phosphor-react";
+import { useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
+// import { RegisterUser } from "../../redux/slices/auth";
 
 // ----------------------------------------------------------------------
 
 const RegisterForm = () => {
+  // const dispatch = useDispatch();
+  // const { isLoading } = useSelector((state) => state.auth);
   const [showPassword, setShowPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
@@ -45,12 +51,13 @@ const RegisterForm = () => {
     reset,
     setError,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitSuccessful, isSubmitting },
   } = methods;
 
   const onSubmit = async (data) => {
     try {
       // submit data to backend
+      // dispatch(RegisterUser(data));
     } catch (error) {
       console.error(error);
       reset();

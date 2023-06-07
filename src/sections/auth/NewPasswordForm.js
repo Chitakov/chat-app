@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import * as Yup from "yup";
 // form
 import { useForm } from "react-hook-form";
@@ -8,24 +9,28 @@ import { Stack, IconButton, InputAdornment, Button } from "@mui/material";
 // components
 import FormProvider, { RHFTextField } from "../../components/hook-form";
 import { Eye, EyeSlash } from "phosphor-react";
+import { useDispatch } from "react-redux";
+import { NewPassword } from "../../redux/slices/auth";
 
 // ----------------------------------------------------------------------
 
 const NewPasswordForm = () => {
+  const dispatch = useDispatch();
+  const [queryParameters] = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
 
   const VerifyCodeSchema = Yup.object().shape({
     password: Yup.string()
       .min(6, "Пароль должен содержать не менее 6 символов")
       .required("Необходимо ввести пароль"),
-    confirmPassword: Yup.string()
+    passwordConfirm: Yup.string()
       .required("Необходимо подтверждение пароля")
       .oneOf([Yup.ref("password"), null], "Пароли должны совпадать"),
   });
 
   const defaultValues = {
     password: "",
-    confirmPassword: "",
+    passwordConfirm: "",
   };
 
   const methods = useForm({
@@ -44,6 +49,7 @@ const NewPasswordForm = () => {
   const onSubmit = async (data) => {
     try {
       // submit data to backend
+      dispatch(NewPassword({ ...data, token: queryParameters.get("token") }));
     } catch (error) {
       console.error(error);
       reset();
@@ -59,7 +65,7 @@ const NewPasswordForm = () => {
       <Stack spacing={3}>
         <RHFTextField
           name="password"
-          label="Пароль"
+          label="Новый пароль"
           type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
@@ -76,7 +82,7 @@ const NewPasswordForm = () => {
         />
 
         <RHFTextField
-          name="confirmPassword"
+          name="passwordConfirm"
           label="Подтверждение нового пароля"
           type={showPassword ? "text" : "password"}
           InputProps={{
