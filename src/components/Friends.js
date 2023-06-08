@@ -19,6 +19,8 @@ import {
 import { socket } from "../socket";
 import StyledBadge from "./StyledBadge";
 
+const user_id = window.localStorage.getItem("user_id");
+
 const StyledChatBox = styled(Box)(({ theme }) => ({
   "&:hover": {
     cursor: "pointer",
@@ -34,7 +36,6 @@ const UserComponent = ({
   online,
   _id,
 }) => {
-  const user_id = window.localStorage.getItem("user_id");
   const theme = useTheme();
 
   const name = `${firstName} ${lastName}`;
@@ -201,6 +202,7 @@ const FriendComponent = ({
           <IconButton
             onClick={() => {
               //start new conversation
+              socket.emit("start_conversation", { to: _id, from: user_id });
             }}
           >
             <Chat />

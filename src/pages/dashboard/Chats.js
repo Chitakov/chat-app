@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -27,6 +27,9 @@ import {
   StyledInputBase,
 } from "../../components/Search";
 import Friends from "../../sections/main/Friends";
+import { socket } from "../../socket";
+import { useDispatch, useSelector } from "react-redux";
+import { FetchDirectConversations } from "../../redux/slices/conversation";
 
 const truncateText = (string, n) => {
   return string.length > n ? `${string.slice(0, n)}...` : string;
@@ -110,10 +113,26 @@ const ChatElement = ({ img, name, msg, time, unread, online, id }) => {
   );
 };
 
+const user_id = window.localStorage.getItem("user_id");
+
 const Chats = () => {
+  const dispatch = useDispatch();
   const theme = useTheme();
 
   const [openDialog, setOpenDialog] = useState(false);
+
+  const { conversations } = useSelector(
+    (state) => state.conversations.direct_chat
+  );
+
+  useEffect(() => {
+    socket.emit("get_direct_conversations", { user_id }, (data) => {
+      console.log(data); // this data is the list of conversations
+      // dispatch action
+
+      dispatch(FetchDirectConversations({ conversations: data }));
+    });
+  }, []);
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
@@ -178,20 +197,22 @@ const Chats = () => {
           <Stack sx={{ flexGrow: 1, overflowY: "scroll", height: "100%" }}>
             <SimpleBarStyle timeout={500} clickOnTrack={false}>
               <Stack spacing={2.4}>
-                <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                  Закреплённые
-                </Typography>
+                {/* <Typography variant="subtitle2" sx={{ color: "#676667" }}> */}
+                {/* Закреплённые */}
+                {/* </Typography> */}
                 {/* Chat List */}
-                {ChatList.filter((el) => el.pinned).map((el) => {
-                  return <ChatElement {...el} />;
-                })}
+                {/* {ChatList.filter((el) => el.pinned).map((el) => { */}
+                {/* return <ChatElement {...el} />; */}
+                {/* })} */}
                 <Typography variant="subtitle2" sx={{ color: "#676667" }}>
                   Все чаты
                 </Typography>
                 {/* Chat List */}
-                {ChatList.filter((el) => !el.pinned).map((el) => {
-                  return <ChatElement {...el} />;
-                })}
+                {conversations
+                  .filter((el) => !el.pinned)
+                  .map((el) => {
+                    return <ChatElement {...el} />;
+                  })}
               </Stack>
             </SimpleBarStyle>
           </Stack>
