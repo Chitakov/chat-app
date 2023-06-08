@@ -122,7 +122,7 @@ const Chats = () => {
   const [openDialog, setOpenDialog] = useState(false);
 
   const { conversations } = useSelector(
-    (state) => state.conversations.direct_chat
+    (state) => state.conversation.direct_chat
   );
 
   useEffect(() => {
