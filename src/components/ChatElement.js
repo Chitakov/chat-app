@@ -3,12 +3,15 @@ import { Box, Badge, Stack, Avatar, Typography } from "@mui/material";
 import { styled, useTheme, alpha } from "@mui/material/styles";
 import { useSearchParams } from "react-router-dom";
 import StyledBadge from "./StyledBadge";
+import { useDispatch } from "react-redux";
+import { SelectConversation } from "../redux/slices/app";
 
 const truncateText = (string, n) => {
   return string.length > n ? `${string.slice(0, n)}...` : string;
 };
 
 const ChatElement = ({ img, name, msg, time, unread, online, id }) => {
+  const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedChatId = searchParams.get("id");
 
@@ -23,9 +26,10 @@ const ChatElement = ({ img, name, msg, time, unread, online, id }) => {
   return (
     <Box
       onClick={() => {
-        searchParams.set("id", id);
-        searchParams.set("type", "individual-chat");
-        setSearchParams(searchParams);
+        dispatch(SelectConversation({ room_id: id }));
+        // searchParams.set("id", id);
+        // searchParams.set("type", "individual-chat");
+        // setSearchParams(searchParams);
       }}
       sx={{
         width: "100%",
