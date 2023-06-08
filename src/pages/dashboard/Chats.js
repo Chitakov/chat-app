@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -10,7 +10,12 @@ import {
   Avatar,
   Badge,
 } from "@mui/material";
-import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
+import {
+  ArchiveBox,
+  CircleDashed,
+  MagnifyingGlass,
+  Users,
+} from "phosphor-react";
 import { SimpleBarStyle } from "../../components/Scrollbar";
 import { useTheme, styled, alpha } from "@mui/material/styles";
 import { useSearchParams } from "react-router-dom";
@@ -21,6 +26,7 @@ import {
   SearchIconWrapper,
   StyledInputBase,
 } from "../../components/Search";
+import Friends from "../../sections/main/Friends";
 
 const truncateText = (string, n) => {
   return string.length > n ? `${string.slice(0, n)}...` : string;
@@ -107,69 +113,94 @@ const ChatElement = ({ img, name, msg, time, unread, online, id }) => {
 const Chats = () => {
   const theme = useTheme();
 
-  return (
-    <Box
-      sx={{
-        position: "relative",
-        height: "100%",
-        width: 320,
-        backgroundColor:
-          theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background,
+  const [openDialog, setOpenDialog] = useState(false);
 
-        boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
-      }}
-    >
-      <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
-        <Stack
-          alignItems={"center"}
-          justifyContent="space-between"
-          direction="row"
-        >
-          <Typography variant="h5">Чаты</Typography>
-          <IconButton sx={{ width: "max-content" }}>
-            <CircleDashed />
-          </IconButton>
-        </Stack>
-        <Stack sx={{ width: "100%" }}>
-          <Search>
-            <SearchIconWrapper>
-              <MagnifyingGlass color="#709CE6" />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Поиск…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-        </Stack>
-        <Stack spacing={1}>
-          <Stack direction={"row"} spacing={1.5} alignItems="center">
-            <ArchiveBox size={24} />
-            <Button variant="text">Архив</Button>
-          </Stack>
-          <Divider />
-        </Stack>
-        <Stack sx={{ flexGrow: 1, overflowY: "scroll", height: "100%" }}>
-          <SimpleBarStyle timeout={500} clickOnTrack={false}>
-            <Stack spacing={2.4}>
-              <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                Закреплённые
-              </Typography>
-              {/* Chat List */}
-              {ChatList.filter((el) => el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
-              <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                Все чаты
-              </Typography>
-              {/* Chat List */}
-              {ChatList.filter((el) => !el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
+  };
+  return (
+    <>
+      <Box
+        sx={{
+          position: "relative",
+          height: "100%",
+          width: 320,
+          backgroundColor:
+            theme.palette.mode === "light"
+              ? "#F8FAFF"
+              : theme.palette.background,
+
+          boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
+        }}
+      >
+        <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
+          <Stack
+            alignItems={"center"}
+            justifyContent="space-between"
+            direction="row"
+          >
+            <Typography variant="h5">Чаты</Typography>
+            <Stack direction={"row"} alignItems="center" spacing={1}>
+              <IconButton
+                onClick={() => {
+                  handleOpenDialog();
+                }}
+                sx={{ width: "max-content" }}
+              >
+                <Users />
+              </IconButton>
+              <IconButton sx={{ width: "max-content" }}>
+                <CircleDashed />
+              </IconButton>
             </Stack>
-          </SimpleBarStyle>
+          </Stack>
+          <Stack sx={{ width: "100%" }}>
+            <Search>
+              <SearchIconWrapper>
+                <MagnifyingGlass color="#709CE6" />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Поиск…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+          </Stack>
+          <Stack spacing={1}>
+            <Stack direction={"row"} spacing={1.5} alignItems="center">
+              <ArchiveBox size={24} />
+              <Button variant="text">Архив</Button>
+            </Stack>
+            <Divider />
+          </Stack>
+          <Stack sx={{ flexGrow: 1, overflowY: "scroll", height: "100%" }}>
+            <SimpleBarStyle timeout={500} clickOnTrack={false}>
+              <Stack spacing={2.4}>
+                <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                  Закреплённые
+                </Typography>
+                {/* Chat List */}
+                {ChatList.filter((el) => el.pinned).map((el) => {
+                  return <ChatElement {...el} />;
+                })}
+                <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                  Все чаты
+                </Typography>
+                {/* Chat List */}
+                {ChatList.filter((el) => !el.pinned).map((el) => {
+                  return <ChatElement {...el} />;
+                })}
+              </Stack>
+            </SimpleBarStyle>
+          </Stack>
         </Stack>
-      </Stack>
-    </Box>
+      </Box>
+      {openDialog && (
+        <Friends open={openDialog} handleClose={handleCloseDialog} />
+      )}
+    </>
   );
 };
 
